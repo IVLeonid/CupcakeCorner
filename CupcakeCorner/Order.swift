@@ -36,6 +36,10 @@ class Order: Codable {
             return false
         }
         
+        if name.allSatisfy (\.isWhitespace) || streetAddress.allSatisfy (\.isWhitespace) || city.allSatisfy (\.isWhitespace) || zip.allSatisfy (\.isWhitespace) {
+            return false
+        }
+        
         return true
     }
     
